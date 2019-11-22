@@ -1,14 +1,13 @@
 <?php
 	
 //SETTINGS
-//Enter here the network IP Just like in the example below
 $ip_area = "192.168.1.";
-//Below eneter the file you are looking for in the network. You can leave this empty if you are not looking for a specific file
 $file_to_scan = "index.html";
 
 
 //Requirements
-require_once '/Library/WebServer/Documents/ip_scan/src/PHP_Amp/PHP_Amp_Parallel_Functions/vendor/autoload.php';
+$page_directory = dirname(__FILE__);
+require_once $page_directory . '/src/vendor/autoload.php';
 use Amp\Promise;
 use function Amp\ParallelFunctions\parallelMap;
 
@@ -21,6 +20,8 @@ for($i=1;$i<=256;$i++){
 	$ipindex = $ip_area . $i;
 	$urls_array[$ipindex] = "http://" . $ip_area . "$i/$file_to_scan";;	
 }
+
+echo "Scanning: wait 5 seconds ..." . PHP_EOL;
 
 // Executing functions
 $devicesCurl = array();
@@ -55,8 +56,9 @@ foreach($devicesCurl as $deviceIp => $callReturn){
 	
 	$resp = curl_getinfo($devicesCurl[$deviceIp], CURLINFO_HTTP_CODE);
 	if($resp != 0){
-		echo "Device found at $deviceIp. Response code: " . $resp;
+		echo "Device found at $deviceIp - Response code: " . $resp;
 		echo PHP_EOL;
 	}
 		
 }
+
