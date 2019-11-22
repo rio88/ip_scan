@@ -1,0 +1,5 @@
+{
+    "require": {
+        "amphp/parallel-functions": "^0.1.3"
+    }
+}
