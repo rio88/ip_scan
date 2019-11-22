@@ -1,7 +1,9 @@
 <?php
 	
 //SETTINGS
+//Edit the address below to reflect your network
 $ip_area = "192.168.1.";
+//If you are not looking for a specific file, just leave this empty, otherwise endter the file name here
 $file_to_scan = "index.html";
 
 
