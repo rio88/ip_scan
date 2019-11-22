@@ -12,4 +12,4 @@ At the beginning of the file, change the $ip_area variable with your network inf
 
     $file_to_scan = "index.html";
 
-You cam leave this empty if you don't wanna scan for a specific file, otherwise fill this in with the path of your choice.
+You can leave this empty if you don't wanna scan for a specific file, otherwise fill this in with the path of your choice.
