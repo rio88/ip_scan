@@ -1,7 +1,7 @@
 # ip_scan
 Quick PHP Script to scan the connected devices to a network
 
-With this simple script you can scan all the devices connected to your network just in case you lost or do not remember the IP adrress of a certain device.
+With this simple script you can scan all the devices connected to your network that respond to the port 80, just in case you lost or do not remember the IP adrress of a certain device.
 
 USAGE:
 
